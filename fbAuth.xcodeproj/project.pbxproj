@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DC1619877F5616DA6CA66B2 /* Pods_fbAuthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEE0B28BE4BA674B593E8B2 /* Pods_fbAuthTests.framework */; };
 		596095F51FEBCD290026FD42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596095F41FEBCD290026FD42 /* AppDelegate.swift */; };
 		596095F71FEBCD290026FD42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596095F61FEBCD290026FD42 /* ViewController.swift */; };
 		596095FA1FEBCD290026FD42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596095F81FEBCD290026FD42 /* Main.storyboard */; };
@@ -14,6 +15,21 @@
 		596095FF1FEBCD290026FD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596095FE1FEBCD290026FD42 /* Assets.xcassets */; };
 		596096021FEBCD290026FD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596096001FEBCD290026FD42 /* LaunchScreen.storyboard */; };
 		5960960D1FEBCD290026FD42 /* fbAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5960960C1FEBCD290026FD42 /* fbAuthTests.swift */; };
+		5960961E1FEBDADE0026FD42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5960961D1FEBDADE0026FD42 /* GoogleService-Info.plist */; };
+		5960961F1FEBDADE0026FD42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5960961D1FEBDADE0026FD42 /* GoogleService-Info.plist */; };
+		596096211FEBF2A70026FD42 /* imgShowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596096201FEBF2A70026FD42 /* imgShowingCell.swift */; };
+		596096221FEBF2A70026FD42 /* imgShowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596096201FEBF2A70026FD42 /* imgShowingCell.swift */; };
+		596096241FEBF5A50026FD42 /* customImgLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596096231FEBF5A50026FD42 /* customImgLayout.swift */; };
+		596096251FEBF5A50026FD42 /* customImgLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596096231FEBF5A50026FD42 /* customImgLayout.swift */; };
+		596096271FEC24B00026FD42 /* CellFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596096261FEC24B00026FD42 /* CellFunction.swift */; };
+		596096281FEC24B00026FD42 /* CellFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596096261FEC24B00026FD42 /* CellFunction.swift */; };
+		59AC2E041FF215CB00A1622E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC2E031FF215CB00A1622E /* LoginVC.swift */; };
+		59AC2E061FF2680500A1622E /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC2E051FF2680500A1622E /* ImageViewCell.swift */; };
+		59AC2E091FF3BB3000A1622E /* newOAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC2E081FF3BB3000A1622E /* newOAuthVC.swift */; };
+		59AC2E0B1FF3BB5400A1622E /* newOAuthImgShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC2E0A1FF3BB5400A1622E /* newOAuthImgShowVC.swift */; };
+		59AC2E0D1FF3BBC400A1622E /* fbImageShowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC2E0C1FF3BBC400A1622E /* fbImageShowingCell.swift */; };
+		59AC2E0F1FFE204B00A1622E /* demoCollecionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC2E0E1FFE204B00A1622E /* demoCollecionViewCell.swift */; };
+		A0F72A2F2864BBC6E2BA2529 /* Pods_fbAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E01EA2667B1C512263441A /* Pods_fbAuth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24AE270D58E43C4B54F24F53 /* Pods-fbAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbAuth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fbAuth/Pods-fbAuth.debug.xcconfig"; sourceTree = "<group>"; };
+		3AECA860775769B44F9DB94E /* Pods-fbAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbAuth.release.xcconfig"; path = "Pods/Target Support Files/Pods-fbAuth/Pods-fbAuth.release.xcconfig"; sourceTree = "<group>"; };
 		596095F11FEBCD290026FD42 /* fbAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		596095F41FEBCD290026FD42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		596095F61FEBCD290026FD42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +56,20 @@
 		596096081FEBCD290026FD42 /* fbAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fbAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5960960C1FEBCD290026FD42 /* fbAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbAuthTests.swift; sourceTree = "<group>"; };
 		5960960E1FEBCD290026FD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5960961D1FEBDADE0026FD42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		596096201FEBF2A70026FD42 /* imgShowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgShowingCell.swift; sourceTree = "<group>"; };
+		596096231FEBF5A50026FD42 /* customImgLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customImgLayout.swift; sourceTree = "<group>"; };
+		596096261FEC24B00026FD42 /* CellFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFunction.swift; sourceTree = "<group>"; };
+		59AC2E031FF215CB00A1622E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		59AC2E051FF2680500A1622E /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		59AC2E081FF3BB3000A1622E /* newOAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newOAuthVC.swift; sourceTree = "<group>"; };
+		59AC2E0A1FF3BB5400A1622E /* newOAuthImgShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newOAuthImgShowVC.swift; sourceTree = "<group>"; };
+		59AC2E0C1FF3BBC400A1622E /* fbImageShowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbImageShowingCell.swift; sourceTree = "<group>"; };
+		59AC2E0E1FFE204B00A1622E /* demoCollecionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoCollecionViewCell.swift; sourceTree = "<group>"; };
+		8B5C8E1A029520B06F50D295 /* Pods-fbAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbAuthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fbAuthTests/Pods-fbAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B79861EC241D3B027A7A70B /* Pods-fbAuthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbAuthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fbAuthTests/Pods-fbAuthTests.release.xcconfig"; sourceTree = "<group>"; };
+		AFEE0B28BE4BA674B593E8B2 /* Pods_fbAuthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbAuthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E01EA2667B1C512263441A /* Pods_fbAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F72A2F2864BBC6E2BA2529 /* Pods_fbAuth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC1619877F5616DA6CA66B2 /* Pods_fbAuthTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +98,8 @@
 				596095F31FEBCD290026FD42 /* fbAuth */,
 				5960960B1FEBCD290026FD42 /* fbAuthTests */,
 				596095F21FEBCD290026FD42 /* Products */,
+				B7603D89077AB4CAFE6344EB /* Pods */,
+				930C0EC8CB4FBE48C2A19649 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +115,20 @@
 		596095F31FEBCD290026FD42 /* fbAuth */ = {
 			isa = PBXGroup;
 			children = (
+				59AC2E071FF3BAF100A1622E /* new views */,
 				596095F41FEBCD290026FD42 /* AppDelegate.swift */,
 				596095F61FEBCD290026FD42 /* ViewController.swift */,
 				596095F81FEBCD290026FD42 /* Main.storyboard */,
 				596095FE1FEBCD290026FD42 /* Assets.xcassets */,
 				596096001FEBCD290026FD42 /* LaunchScreen.storyboard */,
 				596096031FEBCD290026FD42 /* Info.plist */,
+				5960961D1FEBDADE0026FD42 /* GoogleService-Info.plist */,
 				596095FB1FEBCD290026FD42 /* fbAuth.xcdatamodeld */,
+				596096201FEBF2A70026FD42 /* imgShowingCell.swift */,
+				596096231FEBF5A50026FD42 /* customImgLayout.swift */,
+				596096261FEC24B00026FD42 /* CellFunction.swift */,
+				59AC2E031FF215CB00A1622E /* LoginVC.swift */,
+				59AC2E051FF2680500A1622E /* ImageViewCell.swift */,
 			);
 			path = fbAuth;
 			sourceTree = "<group>";
@@ -99,6 +142,37 @@
 			path = fbAuthTests;
 			sourceTree = "<group>";
 		};
+		59AC2E071FF3BAF100A1622E /* new views */ = {
+			isa = PBXGroup;
+			children = (
+				59AC2E081FF3BB3000A1622E /* newOAuthVC.swift */,
+				59AC2E0A1FF3BB5400A1622E /* newOAuthImgShowVC.swift */,
+				59AC2E0C1FF3BBC400A1622E /* fbImageShowingCell.swift */,
+				59AC2E0E1FFE204B00A1622E /* demoCollecionViewCell.swift */,
+			);
+			path = "new views";
+			sourceTree = "<group>";
+		};
+		930C0EC8CB4FBE48C2A19649 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9E01EA2667B1C512263441A /* Pods_fbAuth.framework */,
+				AFEE0B28BE4BA674B593E8B2 /* Pods_fbAuthTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7603D89077AB4CAFE6344EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24AE270D58E43C4B54F24F53 /* Pods-fbAuth.debug.xcconfig */,
+				3AECA860775769B44F9DB94E /* Pods-fbAuth.release.xcconfig */,
+				8B5C8E1A029520B06F50D295 /* Pods-fbAuthTests.debug.xcconfig */,
+				8B79861EC241D3B027A7A70B /* Pods-fbAuthTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 596096111FEBCD290026FD42 /* Build configuration list for PBXNativeTarget "fbAuth" */;
 			buildPhases = (
+				FF574A384426BFB266576EF0 /* [CP] Check Pods Manifest.lock */,
 				596095ED1FEBCD290026FD42 /* Sources */,
 				596095EE1FEBCD290026FD42 /* Frameworks */,
 				596095EF1FEBCD290026FD42 /* Resources */,
+				6826AD434B96052BFEF82D25 /* [CP] Embed Pods Frameworks */,
+				26D17CF795A1A2F003AACA69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 596096141FEBCD290026FD42 /* Build configuration list for PBXNativeTarget "fbAuthTests" */;
 			buildPhases = (
+				CBA4B256E5BDF071FA448623 /* [CP] Check Pods Manifest.lock */,
 				596096041FEBCD290026FD42 /* Sources */,
 				596096051FEBCD290026FD42 /* Frameworks */,
 				596096061FEBCD290026FD42 /* Resources */,
+				BC3DCC347CFF5261BEA9957F /* [CP] Embed Pods Frameworks */,
+				37BBBB2CC541B2024863E3CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				596096021FEBCD290026FD42 /* LaunchScreen.storyboard in Resources */,
+				5960961E1FEBDADE0026FD42 /* GoogleService-Info.plist in Resources */,
 				596095FF1FEBCD290026FD42 /* Assets.xcassets in Resources */,
 				596095FA1FEBCD290026FD42 /* Main.storyboard in Resources */,
 			);
@@ -192,10 +273,123 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5960961F1FEBDADE0026FD42 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26D17CF795A1A2F003AACA69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbAuth/Pods-fbAuth-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37BBBB2CC541B2024863E3CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbAuthTests/Pods-fbAuthTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6826AD434B96052BFEF82D25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-fbAuth/Pods-fbAuth-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbAuth/Pods-fbAuth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC3DCC347CFF5261BEA9957F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbAuthTests/Pods-fbAuthTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBA4B256E5BDF071FA448623 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fbAuthTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF574A384426BFB266576EF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fbAuth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		596095ED1FEBCD290026FD42 /* Sources */ = {
@@ -203,8 +397,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				596095FD1FEBCD290026FD42 /* fbAuth.xcdatamodeld in Sources */,
+				59AC2E091FF3BB3000A1622E /* newOAuthVC.swift in Sources */,
+				59AC2E0F1FFE204B00A1622E /* demoCollecionViewCell.swift in Sources */,
+				596096271FEC24B00026FD42 /* CellFunction.swift in Sources */,
+				59AC2E041FF215CB00A1622E /* LoginVC.swift in Sources */,
 				596095F71FEBCD290026FD42 /* ViewController.swift in Sources */,
+				59AC2E061FF2680500A1622E /* ImageViewCell.swift in Sources */,
+				59AC2E0D1FF3BBC400A1622E /* fbImageShowingCell.swift in Sources */,
 				596095F51FEBCD290026FD42 /* AppDelegate.swift in Sources */,
+				596096241FEBF5A50026FD42 /* customImgLayout.swift in Sources */,
+				59AC2E0B1FF3BB5400A1622E /* newOAuthImgShowVC.swift in Sources */,
+				596096211FEBF2A70026FD42 /* imgShowingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +416,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5960960D1FEBCD290026FD42 /* fbAuthTests.swift in Sources */,
+				596096251FEBF5A50026FD42 /* customImgLayout.swift in Sources */,
+				596096221FEBF2A70026FD42 /* imgShowingCell.swift in Sources */,
+				596096281FEC24B00026FD42 /* CellFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,11 +561,13 @@
 		};
 		596096121FEBCD290026FD42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24AE270D58E43C4B54F24F53 /* Pods-fbAuth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CZ6TZM89R5;
 				INFOPLIST_FILE = fbAuth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.-fbAuth.fbAuth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,11 +578,13 @@
 		};
 		596096131FEBCD290026FD42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AECA860775769B44F9DB94E /* Pods-fbAuth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CZ6TZM89R5;
 				INFOPLIST_FILE = fbAuth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.-fbAuth.fbAuth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,6 +595,7 @@
 		};
 		596096151FEBCD290026FD42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5C8E1A029520B06F50D295 /* Pods-fbAuthTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -402,6 +613,7 @@
 		};
 		596096161FEBCD290026FD42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B79861EC241D3B027A7A70B /* Pods-fbAuthTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

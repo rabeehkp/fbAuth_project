@@ -1,0 +1,6 @@
+framework module Pods_fbAuthTests {
+  umbrella header "Pods-fbAuthTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

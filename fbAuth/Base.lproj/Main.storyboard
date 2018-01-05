@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aC7-Vz-nlV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,273 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="fbAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwA-UZ-lmP">
+                                <rect key="frame" x="16" y="553" width="343" height="64"/>
+                                <color key="backgroundColor" red="0.079425118863582611" green="0.32162553071975708" blue="0.74350088834762573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="hgn-yG-G3w"/>
+                                </constraints>
+                                <state key="normal" title="    Continue with facebook" image="facebook-logo-2"/>
+                                <connections>
+                                    <action selector="facebookLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vB5-4a-8Rh"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uGY-RD-u2N">
+                                <rect key="frame" x="16" y="40" width="343" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="ojS-EA-PXt" customClass="customImgLayout" customModule="fbAuth"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="imgShowingCell" reuseIdentifier="cell" id="mCT-dp-Zv4" customClass="ImageViewCell" customModule="fbAuth" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="417-r0-8na">
+                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="170"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="417-r0-8na" secondAttribute="trailing" id="3k0-1N-kk9"/>
+                                            <constraint firstAttribute="bottom" secondItem="417-r0-8na" secondAttribute="bottom" id="Axw-Ij-l9k"/>
+                                            <constraint firstItem="417-r0-8na" firstAttribute="leading" secondItem="mCT-dp-Zv4" secondAttribute="leading" id="IHU-eH-kg7"/>
+                                            <constraint firstItem="417-r0-8na" firstAttribute="top" secondItem="mCT-dp-Zv4" secondAttribute="top" id="eHN-eT-AVm"/>
+                                        </constraints>
+                                        <size key="customSize" width="165" height="170"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="417-r0-8na" id="NFQ-0q-cYA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lwA-UZ-lmP" secondAttribute="trailing" constant="16" id="HzX-wi-e2g"/>
+                            <constraint firstItem="lwA-UZ-lmP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LTf-DW-t6Y"/>
+                            <constraint firstItem="uGY-RD-u2N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OPF-En-M9f"/>
+                            <constraint firstItem="uGY-RD-u2N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Sqi-nN-8t2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uGY-RD-u2N" secondAttribute="trailing" constant="16" id="cys-Iy-ikN"/>
+                            <constraint firstItem="lwA-UZ-lmP" firstAttribute="top" secondItem="uGY-RD-u2N" secondAttribute="bottom" constant="25" id="kqR-qe-dws"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lwA-UZ-lmP" secondAttribute="bottom" constant="50" id="x3T-Ek-66p"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="facebookLogin" destination="lwA-UZ-lmP" id="T3G-yT-c9w"/>
+                        <outlet property="myCollectionView" destination="uGY-RD-u2N" id="bCk-Su-h6B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="105.69715142428787"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="BCs-Ko-8IJ">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mUK-if-hhe" customClass="LoginVC" customModule="fbAuth" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Iq-kY-uUu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P34-Ua-8Nr">
+                                <rect key="frame" x="16" y="553" width="359" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="XxM-tI-K6j"/>
+                                </constraints>
+                                <state key="normal" title="       Continue with facebook" image="facebook">
+                                    <color key="titleColor" red="0.079425118863582611" green="0.32162553071975708" blue="0.74350088834762573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.092386879026889801" green="0.26915067434310913" blue="0.93892949819564819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fbLoginButton:" destination="mUK-if-hhe" eventType="touchUpInside" id="1e5-tS-9FY"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LpY-Uq-UcQ">
+                                <rect key="frame" x="16" y="41" width="343" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="12V-Ky-n7u">
+                                    <size key="itemSize" width="164" height="193"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="imgShowingCell" reuseIdentifier="Cell" id="fRm-oK-l1d" customClass="imgShowingCell" customModule="fbAuth" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="193"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="193"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mRv-hW-uVe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="193"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="mRv-hW-uVe" firstAttribute="top" secondItem="fRm-oK-l1d" secondAttribute="top" id="4rg-Cb-6Sv"/>
+                                            <constraint firstAttribute="bottom" secondItem="mRv-hW-uVe" secondAttribute="bottom" id="Edf-lp-eOi"/>
+                                            <constraint firstAttribute="trailing" secondItem="mRv-hW-uVe" secondAttribute="trailing" id="Kii-ld-5Os"/>
+                                            <constraint firstItem="mRv-hW-uVe" firstAttribute="leading" secondItem="fRm-oK-l1d" secondAttribute="leading" id="y8M-Rk-yEM"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="mRv-hW-uVe" id="QBU-Xn-KZD"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="mUK-if-hhe" id="bwr-iN-hVe"/>
+                                    <outlet property="delegate" destination="mUK-if-hhe" id="5td-hv-ACR"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P34-Ua-8Nr" firstAttribute="leading" secondItem="4Aq-mh-Uhe" secondAttribute="leading" constant="16" id="KVX-KD-J7m"/>
+                            <constraint firstItem="P34-Ua-8Nr" firstAttribute="top" secondItem="LpY-Uq-UcQ" secondAttribute="bottom" constant="21" id="ap2-aL-Ioh"/>
+                            <constraint firstItem="LpY-Uq-UcQ" firstAttribute="trailing" secondItem="4Aq-mh-Uhe" secondAttribute="trailing" constant="-16" id="cvK-rA-D9b"/>
+                            <constraint firstItem="P34-Ua-8Nr" firstAttribute="trailing" secondItem="4Aq-mh-Uhe" secondAttribute="trailing" id="dYq-Rd-Swh"/>
+                            <constraint firstItem="LpY-Uq-UcQ" firstAttribute="leading" secondItem="4Aq-mh-Uhe" secondAttribute="leading" constant="16" id="dns-5E-KOl"/>
+                            <constraint firstItem="LpY-Uq-UcQ" firstAttribute="top" secondItem="4Aq-mh-Uhe" secondAttribute="top" constant="21" id="fQ3-eu-424"/>
+                            <constraint firstItem="4Aq-mh-Uhe" firstAttribute="bottom" secondItem="P34-Ua-8Nr" secondAttribute="bottom" constant="50" id="zG5-Cz-wcS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Aq-mh-Uhe"/>
+                    </view>
+                    <connections>
+                        <outlet property="fbLogin" destination="P34-Ua-8Nr" id="D0g-CR-fEg"/>
+                        <outlet property="myCollectionView" destination="LpY-Uq-UcQ" id="xBM-m0-5Yt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S03-1y-jG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.8" y="88.605697151424295"/>
+        </scene>
+        <!--NewO AuthVC-->
+        <scene sceneID="OJy-Mu-uoM">
+            <objects>
+                <viewController storyboardIdentifier="newOAuthVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aC7-Vz-nlV" customClass="newOAuthVC" customModule="fbAuth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZeK-xe-RNJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzz-ZE-Nh8">
+                                <rect key="frame" x="0.0" y="306.5" width="375" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="yMg-hB-Fhf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="login with facebook"/>
+                                <connections>
+                                    <action selector="fbLogin:" destination="aC7-Vz-nlV" eventType="touchUpInside" id="XR9-GS-Pc6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xzz-ZE-Nh8" firstAttribute="leading" secondItem="4M7-P3-cZT" secondAttribute="leading" id="0WG-mb-Owq"/>
+                            <constraint firstItem="Xzz-ZE-Nh8" firstAttribute="centerX" secondItem="ZeK-xe-RNJ" secondAttribute="centerX" id="LTH-wx-huj"/>
+                            <constraint firstItem="4M7-P3-cZT" firstAttribute="trailing" secondItem="Xzz-ZE-Nh8" secondAttribute="trailing" id="cFQ-WK-kOy"/>
+                            <constraint firstItem="Xzz-ZE-Nh8" firstAttribute="centerY" secondItem="ZeK-xe-RNJ" secondAttribute="centerY" id="qWI-eM-wDs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4M7-P3-cZT"/>
+                    </view>
+                    <connections>
+                        <outlet property="fbLoginBtm" destination="Xzz-ZE-Nh8" id="gGw-b4-sSs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4N-8A-cUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2836" y="91.304347826086968"/>
+        </scene>
+        <!--NewO Auth Img ShowVC-->
+        <scene sceneID="dXQ-sl-i5U">
+            <objects>
+                <viewController storyboardIdentifier="newOAuthImgShowVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnD-Br-gMp" customClass="newOAuthImgShowVC" customModule="fbAuth" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HbT-yt-t8A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rr3-nj-zai">
+                                <rect key="frame" x="16" y="119" width="343" height="523"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eka-ld-YnN">
+                                    <size key="itemSize" width="161" height="164"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="fbImageShowingCell" reuseIdentifier="myCell" id="O5O-QR-tef" customClass="fbImageShowingCell" customModule="fbAuth">
+                                        <rect key="frame" x="0.0" y="0.0" width="161" height="164"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="161" height="164"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bsl-nu-5ev">
+                                                    <rect key="frame" x="0.0" y="0.0" width="161" height="164"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bsl-nu-5ev" secondAttribute="trailing" id="CDu-9H-V3r"/>
+                                            <constraint firstItem="bsl-nu-5ev" firstAttribute="leading" secondItem="O5O-QR-tef" secondAttribute="leading" id="IoE-t8-4dZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="bsl-nu-5ev" secondAttribute="bottom" id="fPI-4c-t9g"/>
+                                            <constraint firstItem="bsl-nu-5ev" firstAttribute="top" secondItem="O5O-QR-tef" secondAttribute="top" id="rkP-5s-WQP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="fbImgShowingView" destination="bsl-nu-5ev" id="pPp-4R-1oz"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz2-Kc-Ra5">
+                                <rect key="frame" x="271" y="52" width="88" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="logout"/>
+                                <connections>
+                                    <action selector="fbLogout:" destination="PnD-Br-gMp" eventType="touchUpInside" id="LkG-rl-IqN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9PN-d4-cDH" firstAttribute="trailing" secondItem="Dz2-Kc-Ra5" secondAttribute="trailing" constant="16" id="2eu-Pw-xOn"/>
+                            <constraint firstItem="Rr3-nj-zai" firstAttribute="leading" secondItem="9PN-d4-cDH" secondAttribute="leading" constant="16" id="4bi-wy-tvn"/>
+                            <constraint firstItem="9PN-d4-cDH" firstAttribute="bottom" secondItem="Rr3-nj-zai" secondAttribute="bottom" constant="25" id="6kw-jf-Cvn"/>
+                            <constraint firstItem="Rr3-nj-zai" firstAttribute="top" secondItem="Dz2-Kc-Ra5" secondAttribute="bottom" constant="25" id="PBv-Qy-7S9"/>
+                            <constraint firstItem="Dz2-Kc-Ra5" firstAttribute="top" secondItem="9PN-d4-cDH" secondAttribute="top" constant="32" id="V0P-Va-0PR"/>
+                            <constraint firstItem="9PN-d4-cDH" firstAttribute="trailing" secondItem="Rr3-nj-zai" secondAttribute="trailing" constant="16" id="cwc-2V-rWT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9PN-d4-cDH"/>
+                    </view>
+                    <connections>
+                        <outlet property="logOutFbBtn" destination="Dz2-Kc-Ra5" id="lzF-I6-LQB"/>
+                        <outlet property="myCollectionView" destination="Rr3-nj-zai" id="tlD-Bx-fc7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XfP-D7-MvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3652" y="91.304347826086968"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebook" width="64" height="64"/>
+        <image name="facebook-logo-2" width="64" height="64"/>
+    </resources>
 </document>
