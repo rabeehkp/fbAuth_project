@@ -24,6 +24,7 @@ class customImgLayout: UICollectionViewLayout {
     fileprivate var contentHeight: CGFloat = 0
     //fileprivate var contentWidth: CGFloat = 0
     fileprivate var contentWidth: CGFloat = 0
+    //AutoWidth
     var autoWidth : CGFloat {
         guard let collectionView = collectionView else {
             return 0
@@ -31,6 +32,15 @@ class customImgLayout: UICollectionViewLayout {
         let insets = collectionView.contentInset
         return collectionView.bounds.width - (insets.left + insets.right)
     }
+    //autoHeight
+    var autoHeight : CGFloat {
+        guard let collectionView = collectionView else {
+            return 0
+        }
+        let insets = collectionView.contentInset
+        return collectionView.bounds.height - (insets.left + insets.right)
+    }
+    
     // 5
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
@@ -57,7 +67,7 @@ class customImgLayout: UICollectionViewLayout {
             let photoWidth = delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath)
             ImgWidth = photoWidth
             // }
-            if ImgWidth < autoWidth{
+            if ImgWidth > autoWidth{
                 contentWidth = ImgWidth
             }
             else{
@@ -67,7 +77,14 @@ class customImgLayout: UICollectionViewLayout {
             for column in 0 ..< numberOfColumns {
                 xOffset.append(CGFloat(column) * columnWidth)
             }
+            var ImgHeight : CGFloat = 0
             let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
+            ImgHeight = photoHeight
+            // }
+            if ImgHeight > autoHeight{
+                contentHeight = ImgHeight
+            }
+            else{
             let height = cellPadding * 2 + photoHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
@@ -80,6 +97,7 @@ class customImgLayout: UICollectionViewLayout {
             yOffset[column] = yOffset[column] + height
             
             column = column < (numberOfColumns - 1) ? (column + 1) : 0
+            }
         }
     }
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

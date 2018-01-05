@@ -15,32 +15,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     //MARK: -Variables
     var arrayImages : [UIImage] = []
-    var img : UIImage?
+    var imgResult : [UIImage] = []
     var clicked : Bool = true
-    var collectionOn : Bool = false
     var userPhotos:NSArray!
     var cellFunction = CellFunction()
-    var ints = 0
+    
     //MARK: -Outlets
     @IBOutlet weak var facebookLogin: UIButton!
     @IBOutlet weak var myCollectionView: UICollectionView!
     
-    
-    
     //MARK: -View Metherds
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
     
     //MARK: -Button Actions
-    
     @IBAction func facebookLogin(_ sender: UIButton) {
         if clicked == true{
-            
             FBSDKLoginManager().logIn(withReadPermissions: ["public_profile","email","user_photos"], from: self) { (result, err) in
                 if err != nil{
                     print("Custom fb login failed" , err ?? "")
@@ -52,13 +43,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 self.clicked = false
                 if let fetching = FBSDKAccessToken.current()
                 {
-                    
                     self.fetchListOfUserPhotos()
-                    self.callCustomLayout()
                 }
             }
-           
-            
         }
         if clicked == false {
             let loginManager = FBSDKLoginManager()
@@ -67,30 +54,21 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             clicked = true
         }
         dismiss(animated: false, completion: nil)
-        
     }
     
     //MARK: -CollectionView DataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         var returnValue = 0
-        
         if let userPhotosObject = self.userPhotos
         {
-            if arrayImages.count == userPhotos.count{
-                returnValue = userPhotos.count
-            }
-            else{
-            returnValue = arrayImages.count
-            self.myCollectionView.reloadData()
-            }
+            returnValue = userPhotosObject.count
         }
-            myCollectionView.reloadData()
-            return returnValue
-        
+        return returnValue
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,31 +87,28 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 //                // Add photo to a cell as a subview
 //                DispatchQueue.main.async {
 //                    if let image = UIImage(data: imageData){
-            myCell.imageView.image = arrayImages[indexPath.row]
 //                        myCell.imageView.image = image
 //                        myCell.addSubview(myCell.imageView)
-//                        self.arrayImages.append(image)
 //                    }
 //                }
-//            }
-            myCollectionView.reloadData()
-        }
+            myCell.imageView.image = imgResult[indexPath.row]
+            print(myCell.imageView.image)
+            //(named: imgResult[indexPath.row])
+            }
+        
         return myCell
     }
     
     //MARK: -Custom Delegate
-    
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-         return arrayImages[indexPath.row].size.height
-        // return CGFloat(120)
+        return imgResult[indexPath.row].size.height
     }
     
     func collectionView(_ collectionView: UICollectionView, widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return arrayImages[indexPath.row].size.width
-        //return CGFloat(80)
+        return imgResult[indexPath.row].size.width
     }
-    //MARK: -Fetching function
     
+    //MARK: -Fetching function
     func fetchListOfUserPhotos()
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/photos", parameters: ["fields":"picture"] )
@@ -149,43 +124,46 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 let fbResult:[String:AnyObject] = (result as! [String : AnyObject])
                 let image = fbResult["data"] as! NSArray!
                 self.userPhotos = image!
-                if self.arrayImages.count != self.userPhotos.count{
-                    for item in 0...(self.userPhotos.count - 1){
+                if self.imgResult.count != self.userPhotos?.count{
+                    for item in 0...(self.userPhotos!.count - 1){
                         let res = self.userPhotos![item] as! NSDictionary
                         let userPhotoString = res.value(forKey: "picture") as! String
                         let imageUrl:URL = URL(string: userPhotoString)!
-                        
                         DispatchQueue.global(qos: .userInitiated).async  {
-                            
                             let imageData:Data = try! Data(contentsOf: imageUrl)
                             // Add photo to a cell as a subview
                             DispatchQueue.main.async {
                                 if let image = UIImage(data: imageData){
-                                    self.arrayImages.append(image)
+                                    self.imgResult.append(image)
+                                    print(">>>>> \(item)")
+                                    print(self.imgResult)
+                                }
+                                else{
+                                    print("error")
+                                }
+                                if self.imgResult.count == self.userPhotos!.count{
+                                    self.callCustomLayout()
                                 }
                             }
+                           
                         }
+                        
                     }
-                
-                self.myCollectionView.reloadData()
                 }
             }
         })
     }
+    
     //MARK: -Calling custom layout
     func callCustomLayout(){
-        if clicked == true{
-            if let layOut = myCollectionView?.collectionViewLayout as? customImgLayout
-            {
-                layOut.delegate = self
-            }
-            self.myCollectionView.delegate = self
-            self.myCollectionView.dataSource = self
-            self.myCollectionView.reloadData()
+        if let layOut = myCollectionView?.collectionViewLayout as? customImgLayout
+        {
+            layOut.delegate = self
         }
-        
+        self.myCollectionView.delegate = self
+        self.myCollectionView.dataSource = self
+        self.myCollectionView.reloadData()
     }
-    
 }
 
 

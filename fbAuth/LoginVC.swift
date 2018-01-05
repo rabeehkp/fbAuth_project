@@ -19,6 +19,7 @@ class LoginVC: UIViewController , UICollectionViewDelegate, UICollectionViewData
     var userPhoto:NSArray?
     var clicked : Bool = true
     var fid :String!
+    var arrayImages : [UIImage] = []
     
     // MARK: -Outlets
     @IBOutlet weak var fbLogin: UIButton!
@@ -63,26 +64,7 @@ class LoginVC: UIViewController , UICollectionViewDelegate, UICollectionViewData
         
     }
     
-    //MARK: -Fetching function
-    func fetchListOfUserPhotos()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/photos", parameters: ["fields":"picture"] )
-        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                let fbResult:[String:AnyObject] = (result as! [String : AnyObject])
-                let image = fbResult["data"] as! NSArray!
-                self.userPhoto = image!
-                self.myCollectionView.reloadData()
-            }
-        })
-    }
+    
 
     //MARK: -CollectionView Delegates
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -121,6 +103,26 @@ class LoginVC: UIViewController , UICollectionViewDelegate, UICollectionViewData
             }
         }
         return myCell
-
+    }
+    
+    //MARK: -Fetching function
+    func fetchListOfUserPhotos()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/photos", parameters: ["fields":"picture"] )
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let fbResult:[String:AnyObject] = (result as! [String : AnyObject])
+                let image = fbResult["data"] as! NSArray!
+                self.userPhoto = image!
+                    self.myCollectionView.reloadData()
+            }
+        })
     }
 }

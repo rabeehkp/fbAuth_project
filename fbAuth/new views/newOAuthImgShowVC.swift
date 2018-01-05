@@ -25,10 +25,13 @@ class newOAuthImgShowVC: UIViewController, UICollectionViewDelegate , UICollecti
     //MARK: -View methord
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.checkImg()
         clicked = false
         if userPhoto == nil{
         myCollectionView.reloadData()
+        }
+        else{
+            self.checkImg()
+            self.callCustomLayout()
         }
        
     }
@@ -39,7 +42,6 @@ class newOAuthImgShowVC: UIViewController, UICollectionViewDelegate , UICollecti
     }
     //MARK: -Action - fbLogout
     @IBAction func fbLogout(_ sender: UIButton) {
-        
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
         clicked = true
@@ -59,7 +61,6 @@ class newOAuthImgShowVC: UIViewController, UICollectionViewDelegate , UICollecti
             returnValue = userPhotosObject.count
         }
         return returnValue
-        myCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,30 +92,10 @@ class newOAuthImgShowVC: UIViewController, UICollectionViewDelegate , UICollecti
         return myCell
     }
     
-    //MARK: -Fetching Function
-    
-    func fetchListOfUserPhotos()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/photos", parameters: ["fields":"picture"] )
-        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                let fbResult:[String:AnyObject] = (result as! [String : AnyObject])
-                let image = fbResult["data"] as! NSArray!
-                self.userPhoto = image!
-                //image get
-            }
-        })
-    }
+    //MARK: -geting image
     func checkImg(){
         if self.imgresult.count != self.userPhoto.count{
-            for item in 0...(userPhoto.count - 1){
+            for item in 0...(userPhoto.count - 1) {
                 let res = self.userPhoto![item] as! NSDictionary
                 let userPhotoString = res.value(forKey: "picture") as! String
                 let imageUrl:URL = URL(string: userPhotoString)!
@@ -126,12 +107,27 @@ class newOAuthImgShowVC: UIViewController, UICollectionViewDelegate , UICollecti
                     DispatchQueue.main.async {
                         if let image = UIImage(data: imageData){
                             self.imgresult.append(image)
-                            self.myCollectionView.delegate = self
-                            self.myCollectionView.dataSource = self
                         }
                     }
                 }
             }
+//            if arrayImages.count == userPhoto.count{
+//                self.callCustomLayout()
+//            }
+            
         }
+    }
+    
+    //MARK: -Calling custom layout
+    func callCustomLayout(){
+//        if clicked == true{
+//            if let layOut = myCollectionView?.collectionViewLayout as? customImgLayout
+//            {
+//                layOut.delegate = self
+//            }
+            self.myCollectionView.delegate = self
+            self.myCollectionView.dataSource = self
+//        }
+        
     }
 }
